@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pràctica JavaScript</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1 id="titol-principal">Benvingut/da</h1>
+    <h2 id="subtitol">Títol per canviar</h2>
+  </header>
+
+  <main>
+    <section id="ex-llista">
+      <h3>Llista dinàmica</h3>
+      <ul id="llista-dom">
+        <li>Element inicial 1</li>
+        <li>Element inicial 2</li>
+      </ul>
+      <div class="accions"></div>
+    </section>
+
+    <section id="ex-taula">
+      <h3>Taula dinàmica</h3>
+      <table id="taula-dades">
+        <thead>
+          <tr>
+            <th>Descripció</th>
+            <th>Valor</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inicial</td>
+            <td>7</td>
+            <td>01/01/2025</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="accions"></div>
+    </section>
+
+    <section id="ex-mode">
+      <h3>Mode nit</h3>
+      <div class="accions"></div>
+    </section>
+
+    <section id="ex-formulari">
+      <h3>Formulari de registre</h3>
+
+      <form id="form-registre" novalidate>
+        <input type="text" id="nomUsuari" placeholder="Nom d'usuari*" />
+        <input type="email" id="emailUsuari" placeholder="Correu electrònic*" />
+        <input type="password" id="pw1" placeholder="Contrasenya*" />
+        <input type="password" id="pw2" placeholder="Repeteix contrasenya*" />
+        <input type="text" id="codiPostal" placeholder="Codi Postal*" />
+
+        <select id="idioma">
+          <option value="">-- Selecciona idioma* --</option>
+          <option>Català</option>
+          <option>Castellà</option>
+          <option>Anglès</option>
+          <option>Francès</option>
+        </select>
+
+        <button type="submit" id="btn-registre">Registrar</button>
+      </form>
+
+      <div id="resultat"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nom Cognom</p>
+  </footer>
+
+  <script>
+    const numero = prompt("Introduce un número entero:");
+
+    if (numero === null || numero.trim() === "" || isNaN(numero) || !Number.isInteger(Number(numero))) {
+      alert("Entrada no vàlida");
+    } else if (Number(numero) % 2 === 0) {
+      alert("Número parell");
+    } else {
+      alert("Número senar");
+    }
+
+    const preu = prompt("Introduce el precio original:");
+    const descompte = prompt("Introduce el porcentaje de descuento:");
+
+    const preuNum = Number(preu);
+    const descompteNum = Number(descompte);
+
+    if (
+      isNaN(preuNum) ||
+      isNaN(descompteNum) ||
+      preuNum <= 0 ||
+      descompteNum < 0 ||
+      descompteNum > 100
+    ) {
+      alert("Valor no vàlid");
+    } else {
+      const preuFinal = preuNum - (preuNum * descompteNum / 100);
+      alert("Preu final: " + preuFinal.toFixed(2) + " €");
+    }
+
+    const paraula1 = prompt("Introduce la primera palabra:");
+    const paraula2 = prompt("Introduce la segunda palabra:");
+    const paraula3 = prompt("Introduce la tercera palabra:");
+
+    const paraules = [paraula1, paraula2, paraula3];
+    paraules.sort();
+    alert(paraules.join(", "));
+
+    const mes = prompt("Introduce un número de mes entre 1 y 12:");
+    const mesNum = Number(mes);
+
+    if (isNaN(mesNum) || mesNum < 1 || mesNum > 12 || !Number.isInteger(mesNum)) {
+      alert("Mes no vàlid");
+    } else if (mesNum === 12 || mesNum === 1 || mesNum === 2) {
+      alert("Hivern");
+    } else if (mesNum >= 3 && mesNum <= 5) {
+      alert("Primavera");
+    } else if (mesNum >= 6 && mesNum <= 8) {
+      alert("Estiu");
+    } else {
+      alert("Tardor");
+    }
+
+    const hora = new Date().getHours();
+
+    if (hora < 9) {
+      console.log("Molt bon dia");
+    } else if (hora >= 9 && hora < 14) {
+      console.log("Bon dia");
+    } else if (hora >= 14 && hora < 21) {
+      console.log("Bona tarda");
+    } else {
+      console.log("Bona nit");
+    }
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

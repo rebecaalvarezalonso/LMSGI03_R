@@ -1,0 +1,52 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+input,
+select {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 250px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 8px 12px;
+}
+
+.error {
+  display: block;
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.nit {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+.nit table,
+.nit th,
+.nit td {
+  border-color: #e0e0e0;
+}
